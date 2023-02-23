@@ -14,70 +14,54 @@ public class ShopApp {
         Customer c1 = new Customer();
         
         
-        c1.name = "Pinky";
-        System.out.println("Thank you, " + c1.name+"!\n"); 
+        c1.setName("Pinky");
+        System.out.println("Thank you, " + c1.getName()+"!\n"); 
 
         
         int measurement = 3;
         
 
-        switch(measurement){
-            case 1: case 2: case 3: 
-                c1.size = "S";
-                break;
-            case 4: case 5: case 6:
-                c1.size = "M";
-                break; 
-            case 7: case 8: case 9:
-                c1.size = "L";
-                break;
-            default:
-                System.out.println("Error, wrong size.");
-                c1.size = "X";
-                break;
-        }
-               
+        c1.setSize(measurement);//sin usar var_1 = valor_x
         
         Clothing item1 = new Clothing();
         Clothing item2 = new Clothing();
-        
+
+/*Another form of instantiate the array: <new Clothing()>*/        
         Clothing[] items = {item1, item2, new Clothing(), new Clothing()};
         
-        item1.description = "Blue Jacket";
-        item1.price = 20.9;
-        item1.size = "M";
+        item1.setDescription("Blue Jacket");
+        item1.setPrice(20.9);
+        item1.setSize("M");
         
-        item2.description = "Orange T-Shirt";
-        item2.price = 10.5;
-        item2.size = "S";
+        item2.setDescription("Orange T-Shirt");
+        item2.setPrice(10.5);
+        item2.setSize("S");
         
-        items[2].description = "Green Scarf";
-        items[2].price = 5.0;
-        items[2].size = "S";
+        items[2].setDescription("Green Scarf");
+        items[2].setPrice(5.0);
+        items[2].setSize("S");
         
-        items[3].description = "Blue T-Shirt";
-        items[3].price = 10.5;
-        items[3].size = "S";
+        items[3].setDescription("Blue T-Shirt");
+        items[3].setPrice(10.5);
+        items[3].setSize("S");
         
-       
-        double tax;
         double total;
         
-        total = 0;
+
+        
+        total = 0.0;
         for(Clothing counter: items){
-            if(c1.size.equals(counter.size)){
-                System.out.println(counter.description +
-                    ", " + counter.size +
-                    ", " + counter.price);
-                total += counter.price;
-            }
-            if(total>15){
+            if(c1.getSize().equals(counter.getSize())){
+                total += counter.getPrice();
+                System.out.println(counter.getDescription() +
+                    ", " + counter.getSize() +
+                    ", " + counter.getPrice());//si hay dos calls a
+                if(total>15){//getPtice(es doble impuesto)
                 break;
+                }
             }
         }
-        
-        tax = 0.2;
-        total = total+total*tax;
+/*This version does not have the tax thing*/
         System.out.println("\nThe total is $" + total);
     }
     
