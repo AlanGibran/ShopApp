@@ -5,10 +5,11 @@ package duke.choice;
  * @author gibran
  */
 public class Clothing {
+
     private String description;
     private double price;
     private String size = "M";
-    
+
     private final double MINIMUM = 10.0;
     //private final double MIN_TAX = 0.2;
 
@@ -26,7 +27,7 @@ public class Clothing {
     }
 
     public void setPrice(double price) {
-        this.price = (price < 10) ? MINIMUM:price;
+        this.price = (price < 10) ? MINIMUM : price;
     }
 
     public String getSize() {
@@ -36,6 +37,5 @@ public class Clothing {
     public void setSize(String size) {
         this.size = size;
     }
-    
-    
+
 }
