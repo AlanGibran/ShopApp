@@ -1,7 +1,6 @@
 package duke.choice;
 
-/**
- *
+/*
  * @author gibran
  */
 public class Clothing {
@@ -37,5 +36,4 @@ public class Clothing {
     public void setSize(String size) {
         this.size = size;
     }
-
 }

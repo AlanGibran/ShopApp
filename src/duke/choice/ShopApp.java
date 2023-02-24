@@ -1,22 +1,17 @@
 package duke.choice;
 
-/**
- *
+/*
  * @author gibran
  */
 public class ShopApp {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         System.out.println("Welcome to Duke Choice Shop!");
         Customer c1 = new Customer();
-
         c1.setName("Pinky");
 
-        int measurement = 8;
-        c1.setSize(measurement);//sin usar var_1 = valor_x
+        int measurement = 8;//Large size
+        c1.setSize(measurement);
 
         Clothing item1 = new Clothing();
         Clothing item2 = new Clothing();
@@ -39,7 +34,7 @@ public class ShopApp {
         items[3].setPrice(10.5);
         items[3].setSize("S");
 
-        c1.addItems(items);//add all 4 items to the <Clothing[] items> array
+        c1.addItems(items);//add all (4) items to the <Clothing[] items> array
 
         System.out.println("Customer is " + c1.getName()
                 + ", " + c1.getSize() + ", " + c1.getTotalClothingCost());
@@ -48,5 +43,4 @@ public class ShopApp {
             System.out.println("Items " + counter.getDescription());
         }
     }
-
 }
