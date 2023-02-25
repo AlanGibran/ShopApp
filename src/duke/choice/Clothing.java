@@ -9,6 +9,15 @@ public class Clothing {
     private double price;
     private String size = "M";
 
+    public Clothing() {
+    }
+
+    public Clothing(String description, double price, String size) {
+        this.description = description;
+        this.price = price;
+        this.size = size;
+    }
+
     private final double MINIMUM = 10.0;
     //private final double MIN_TAX = 0.2;
 

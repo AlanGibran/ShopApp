@@ -8,6 +8,14 @@ public class Customer {
     private String name;
     private String size;
 
+    public Customer() {
+    }
+
+    public Customer(String name, int measurement) {
+        this.name = name;
+        setSize(measurement);
+    }
+
     /* 1. Add a private  instance var called <items> to the <Customer> class
     to store an array of <Clothing> objects.*/
     private Clothing[] items; //no specific size
