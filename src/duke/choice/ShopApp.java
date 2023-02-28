@@ -8,9 +8,12 @@ public class ShopApp {
     public static void main(String[] args) {
         System.out.println("Welcome to Duke Choice Shop!");
 
-        int measurement = 14;//Large size
+        int measurement = 14;//Large size      
 
         Customer c1 = new Customer("Pinky", measurement);
+
+        System.out.println("MIN_PRICE = " + Clothing.MIN_PRICE);
+        System.out.println("TAX_RATE = " + Clothing.TAX_RATE);
 
         Clothing item1 = new Clothing("Blue Jacket", 20.9, "S");
         Clothing item2 = new Clothing("Orange T-Shirt", 10.5, "S");

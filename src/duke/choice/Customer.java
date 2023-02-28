@@ -8,8 +8,8 @@ public class Customer {
     private String name;
     private String size;
 
-    public Customer() {
-    }
+//    /*public Customer() {
+//    }*/
 
     public Customer(String name, int measurement) {
         this.name = name;
