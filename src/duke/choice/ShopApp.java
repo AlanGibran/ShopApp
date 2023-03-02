@@ -32,5 +32,23 @@ public class ShopApp {
         for (Clothing counter : items) {
             System.out.println("Items " + counter.getDescription());
         }
+
+        int average = 0;
+        int count = 0;
+
+        for (Clothing item : c1.getItems()) {
+            if (item.getSize().equals("L")) {
+                count++;
+                average += item.getPrice();
+            }
+        }
+        try {
+            average = (count == 0) ? 0 : average / count;
+            //average = average / count;
+            System.out.println("Average price " + average + ", Count " + count);
+        } catch (ArithmeticException e) {
+            System.out.println("\nDON'T DIVIDE BY 0");
+        }
+
     }
 }
