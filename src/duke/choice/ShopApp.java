@@ -30,11 +30,12 @@ public class ShopApp {
                 + ", " + c1.getSize() + ", " + c1.getTotalClothingCost());
 
         for (Clothing counter : items) {
-            System.out.println("Items " + counter.getDescription());
+            //System.out.println("Items " + counter.getDescription());/*8-1*/
+            System.out.println("Item_dd " + counter);
         }
 
-        int average = 0;
-        int count = 0;
+        int average = 0;//Practice 7.1; on purpose
+        int count = 0;//on purpose
 
         for (Clothing item : c1.getItems()) {
             if (item.getSize().equals("L")) {
@@ -43,7 +44,7 @@ public class ShopApp {
             }
         }
         try {
-            average = (count == 0) ? 0 : average / count;
+            average = (count == 0) ? 0 : average / count;//avoiding exception
             //average = average / count;
             System.out.println("Average price " + average + ", Count " + count);
         } catch (ArithmeticException e) {
