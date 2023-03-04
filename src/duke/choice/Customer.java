@@ -37,7 +37,6 @@ public class Customer {
     that calculates and returns <total> cost for all clothing 
     items of this customer.*/
     public double getTotalClothingCost() {
-
         double total = 0.0;
 
         for (Clothing counter : items) {
