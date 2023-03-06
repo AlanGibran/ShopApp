@@ -1,5 +1,11 @@
 package duke.choice;
 
+import io.helidon.webserver.Routing;
+import io.helidon.webserver.ServerConfiguration;
+import io.helidon.webserver.WebServer;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 import java.util.Arrays;
 
 /*
@@ -25,7 +31,6 @@ public class ShopApp {
             new Clothing("Green Scarf", 10.5, "S"),
             new Clothing("Blue T-Shirt", 10.5, "S")};
 
-        /*REVISAR ESTO 022523*/
         c1.addItems(items);//add all (4) items to the <Clothing[] items> array
 
         System.out.println("Customer is " + c1.getName()
@@ -33,7 +38,7 @@ public class ShopApp {
 
         for (Clothing counter : items) {
             //System.out.println("Items " + counter.getDescription());/*8-1*/
-            System.out.println("Item_dd " + counter);
+            System.out.println("Item " + counter);
         }
 
         int average = 0;//Practice 7.1; on purpose
@@ -57,5 +62,21 @@ public class ShopApp {
             //System.out.println("Items " + counter.getDescription());/*8-1*/
             System.out.println("Item output " + counter);
         }
+        
+        
+        
+        try {
+            ItemList list = new ItemList(items);
+            Routing routing = Routing.builder().get("/items",
+                    list).build();
+            ServerConfiguration config = ServerConfiguration.builder()
+                    .bindAddress(InetAddress.getLocalHost())
+                    .port(8888).build();
+            WebServer ws = WebServer.create(config, routing);
+            ws.start();
+        }catch(UnknownHostException ex){
+            ex.printStackTrace();
+        }
+        
     }
 }
