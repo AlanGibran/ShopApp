@@ -24,14 +24,19 @@ public class ShopApp {
         System.out.println("MIN_PRICE = " + Clothing.MIN_PRICE);
         System.out.println("TAX_RATE = " + Clothing.TAX_RATE);
 
+        
+        /*Instantiation of the 4 elements of the <items[4]> array*/
         Clothing item1 = new Clothing("Blue Jacket", 20.9, "S");
         Clothing item2 = new Clothing("Orange T-Shirt", 10.5, "S");
 
         /*Another form of instantiate the array: <new Clothing()>*/
-        Clothing items[] = {item1, item2,
+        //AKI SE CREA <items[]> DE TIPO Clothing
+        Clothing[] items = {item1, item2,
             new Clothing("Green Scarf", 10.5, "S"),
             new Clothing("Blue T-Shirt", 10.5, "S")};
 
+        
+        
         c1.addItems(items);//add all (4) items to the <Clothing[] items> array
 
         System.out.println("Customer is " + c1.getName()
@@ -58,6 +63,7 @@ public class ShopApp {
         } catch (ArithmeticException e) {
             System.out.println("\nDON'T DIVIDE BY 0");
         }
+        
         Arrays.sort(c1.getItems());
         for (Clothing counter : items) {
             //System.out.println("Items " + counter.getDescription());/*8-1*/

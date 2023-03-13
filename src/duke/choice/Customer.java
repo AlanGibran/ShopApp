@@ -17,11 +17,12 @@ public class Customer {
 
     /* 1. Add a private  instance var called <items> to the <Customer> class
     to store an array of <Clothing> objects.*/
+    /*Only the declaration of the array like int[] a;*/
     private Clothing[] items; //no specific size
 
     /* 2. Provide a <public> method called <addItems> 
     that accepts <Clothing> arrays as an argument 
-    and assigns it to the <items> instance variable.
+    and assigns it to the <items> instance variable, the array prev. created
      */
     public void addItems(Clothing[] items) { //both Clothing and items[]
         this.items = items;//items declared in 1.
